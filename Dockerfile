@@ -15,7 +15,7 @@ WORKDIR /src
 COPY ["WhatsAppTestLog.csproj", "."]
 RUN dotnet restore "./WhatsAppTestLog.csproj"
 COPY . .
-WORKDIR "/src/WhatsAppTestLog"
+WORKDIR "/src/."
 RUN dotnet build "./WhatsAppTestLog.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
